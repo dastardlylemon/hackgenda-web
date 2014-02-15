@@ -6,15 +6,23 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') Project name
+      a.navbar-brand(href='/') Hackgenda
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=title=='Home'?'active':undefined)
           a(href='/') Home
         li(class=title=='API Browser'?'active':undefined)
           a(href='/api') API Browser
-        li(class=title=='Contact'?'active':undefined)
-          a(href='/contact') Contact
+        li(class=title=='Schedule'?'active':undefined)
+          a(href='/schedule') Schedule
+        li(class=title=='Sponsors'?'active':undefined)
+          a(href='/sponsors') Sponsors
+        li(class=title=='Awards'?'active':undefined)
+          a(href='/awards') Awards
+        li(class=title=='Social'?'active':undefined)
+          a(href='/social') Social
+        li(class=title=='Chat'?'active:':undefined)
+          a(href='/chat') Chat
         
       ul.nav.navbar-nav.navbar-right
         if !user
