@@ -141,7 +141,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedi
 
 //app.get('/admin/adminUpdates', apiController.adminUpdates);
 app.get('/admin/scheduleUpdates', adminController.scheduleUpdates);
-app.post('/admin/scheduleUpdates', adminController.addScheduleUpdates);
+app.post('/admin/scheduleUpdates', adminController.postScheduleUpdates);
 //app.get('/admin/sponsorUpdates', apiController.sponsorUpdates);
 //app.get('/admin/awardUpdates', apiController.awardUpdates);
 //app.get('/admin/socialUpdates', apiController.socialUpdates);
