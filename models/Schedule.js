@@ -26,12 +26,12 @@ exports.getSchedule = function(cb) {
   });
 }
 
-exports.addEvent = function(day, evnt, cb) {
-  Schedule.find({day:day}, function(err, day) {
+exports.addEvent = function(dayname, evnt, cb) {
+  Schedule.find({day:dayname}, function(err, day) {
     //console.log(schedule);
     if (err || !day.day) {
       var schedule = new Schedule({
-        day: day,
+        day: dayname,
         events: [evnt],
       });
       schedule.save(function(err, sched) {
