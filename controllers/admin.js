@@ -11,7 +11,7 @@ exports.adminUpdates = function(req, res) {
 };
 
 exports.scheduleUpdates = function(req, res) {
-  Schedule.getSchedule(function() {
+  Schedule.getSchedule(function(err, sched) {
     if (err) {
       req.flash('errors', errors);
       return req.redirect('admin/scheduleUpdates');
