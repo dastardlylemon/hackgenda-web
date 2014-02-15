@@ -4,8 +4,8 @@ var eventSchema = new mongoose.Schema({
   name: { type: String },
   description: { type: String },
   time: { type: String },
-  duration: { type: Number },
-  URL: { type: String }
+  endtime: { type: String },
+  url: { type: String }
 });
 
 var scheduleSchema = new mongoose.Schema({
@@ -38,6 +38,7 @@ exports.addEvent = function(day, evnt, cb) {
       if (err) {
         cb(err);
         console.log(err);
+        return;
       }
       cb(null, sched);
     });
