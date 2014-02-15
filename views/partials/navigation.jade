@@ -21,12 +21,24 @@
           li(class=title=='Login'?'active':undefined)
             a(href='/login') Login
           if secrets.localAuth
-            li(class=title=='Create Account'?'active':undefined)
-              a(href='/signup') Create Account
+            li(class=title=='Register'?'active':undefined)
+              a(href='/signup') Register
         else
           if user.isAdmin
-            li(class=title=='Sponsors'?'active':undefined)
-              a(href='/sponsors') Sponsors
+            li.dropdown(class=title=='Admin'?'active':undefined)
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Admin&nbsp;
+                i.caret
+              ul.dropdown-menu
+                li: a(href='/admin/updates') Updates
+                li.divider
+                li: a(href='/admin/schedule') Schedule
+                li.divider
+                li: a(href='/admin/sponsors') Sponsors
+                li.divider
+                li: a(href='/admin/awards') Awards
+                li.divider
+                li: a(href='/admin/social') Social
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
