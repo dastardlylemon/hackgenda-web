@@ -19,6 +19,7 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var adminController = require('./controllers/admin');
+var mobileController = require('./controllers/mobile');
 
 /**
  * API keys + Passport configuration.
@@ -147,6 +148,11 @@ app.post('/admin/scheduleUpdates', adminController.postScheduleUpdates);
 //app.get('/admin/socialUpdates', apiController.socialUpdates);
 //app.post('/api',)
 
+/**
+ * Mobile routes
+ */
+
+app.get('/mobile/schedule', mobileController.schedule);
 
 /**
  * Start Express server.
