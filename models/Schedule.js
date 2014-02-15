@@ -33,7 +33,11 @@ exports.addEvent = function(day, evnt, cb) {
         day: day,
       });
     }
-    schedule.events.push(evnt);
+    if (!schedule.event) {
+      schedule.event = [evnt];
+    } else {
+      schedule.events.push(evnt);
+    }
     schedule.save(function(err, sched) {
       if (err) {
         cb(err);
