@@ -10,17 +10,17 @@ block content
     each event in day.events
       div(class='row')
         h5(class='col-sm-2 control-label') Name:
-        span(class='col-sm-2') #{event.name}
+        h6(class='col-sm-2') #{event.name}
         h5(class='col-sm-2 control-label') Start Time:
-        span(class='col-sm-2') #{event.time}
+        h6(class='col-sm-2') #{event.time}
         h5(class='col-sm-2 control-label') End Time:
-        span(class='col-sm-2') #{event.endtime}
+        h6(class='col-sm-2') #{event.endtime}
       div(class='row')
         h5(class='col-sm-2 control-label') Description:
-        span(class='col-sm-10') #{event.description}
+        h6(class='col-sm-10') #{event.description}
       div(class='row')
         h5(class='col-sm-2 control-label') URL:
-        span(class='col-sm-10') #{event.url}
+        h6(class='col-sm-10') #{event.url}
 
 
   form.form-horizontal(role='form', method='POST')
@@ -35,15 +35,15 @@ block content
         textarea.form-control(type='text', name='description', id='description', rows='3')
     .form-group
       label(class='col-sm-2 control-label', for='day') Day
-      .col-sm-8
+      .col-sm-2
         input.form-control(type='text', name='day', id='day')
     .form-group
       label(class='col-sm-2 control-label', for='time') Start Time
-      .col-sm-8
+      .col-sm-2
         input.form-control(type='text', name='time', id='time')
     .form-group
       label(class='col-sm-2 control-label', for='time') End Time
-      .col-sm-8
+      .col-sm-2
         input.form-control(type='text', name='endtime', id='endtime')
     .form-group
       label(class='col-sm-2 control-label', for='url') URL
