@@ -29,7 +29,7 @@ exports.getSchedule = function(cb) {
 exports.addEvent = function(day, evnt, cb) {
   Schedule.find({day:day}, function(err, schedule) {
     console.log(schedule);
-    if (err) {
+    if (err || schedule == []) {
       var schedule = new Schedule({
         day: day,
         event: [evnt],
