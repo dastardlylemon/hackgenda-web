@@ -92,10 +92,11 @@ app.use(function(req, res) {
 app.use(express.errorHandler());
 
 var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Methods', 'GET,POST');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
 
-    next();
+  next();
 }
  app.use(allowCrossDomain);
 
