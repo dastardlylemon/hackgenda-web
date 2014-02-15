@@ -29,22 +29,29 @@ exports.getSchedule = function(cb) {
 exports.addEvent = function(day, evnt, cb) {
   Schedule.find({day:day}, function(err, schedule) {
     if (err) {
-      schedule = new Schedule({
+      var schedule = new Schedule({
         day: day,
+        event: [evnt],
       });
-    }
-    if (!schedule.event) {
-      schedule.event = [evnt];
+      schedule.save(function(err, sched) {
+        if (err) {
+          cb(err);
+          console.log(err);
+          return;
+        }
+        cb(null, sched);
+      });
     } else {
       schedule.events.push(evnt);
+    
+      schedule.save(function(err, sched) {
+        if (err) {
+          cb(err);
+          console.log(err);
+          return;
+        }
+        cb(null, sched);
+      });
     }
-    schedule.save(function(err, sched) {
-      if (err) {
-        cb(err);
-        console.log(err);
-        return;
-      }
-      cb(null, sched);
-    });
   });
 }
