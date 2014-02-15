@@ -13,7 +13,7 @@ var scheduleSchema = new mongoose.Schema({
   events: [eventSchema]
 });
 
-var Schedule = Mongoose.model('Schedule', scheduleSchema);
+var Schedule = mongoose.model('Schedule', scheduleSchema);
 
 exports.getSchedule = function(cb) {
   Schedule.find({}, function (err, sched) {
