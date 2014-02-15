@@ -5,18 +5,20 @@ block content
     h3 Update Schedule
 
   each day in schedule
-    h4 Day: #{day.day}
+    div(class='col-sm-12')
+      h4 Day: #{day.day}
     each event in day.events
-      h5(class='col-sm-2 control-label') Name:
-      span(class='col-sm-2') #{event.name}
-      h5(class='col-sm-2 control-label') Start Time:
-      span(class='col-sm-2') #{event.time}
-      h5(class='col-sm-2 control-label') End Time:
-      span(class='col-sm-2') #{event.endtime}
-      h5(class='col-sm-2 control-label') Description:
-      span(class='col-sm-10') #{event.description}
-      h5(class='col-sm-2 control-label') URL:
-      span(class='col-sm-10') #{event.url}
+      div(class='col-sm-12')
+        h5(class='col-sm-2 control-label') Name:
+        span(class='col-sm-2') #{event.name}
+        h5(class='col-sm-2 control-label') Start Time:
+        span(class='col-sm-2') #{event.time}
+        h5(class='col-sm-2 control-label') End Time:
+        span(class='col-sm-2') #{event.endtime}
+        h5(class='col-sm-2 control-label') Description:
+        span(class='col-sm-10') #{event.description}
+        h5(class='col-sm-2 control-label') URL:
+        span(class='col-sm-10') #{event.url}
 
 
   form.form-horizontal(role='form', method='POST')
