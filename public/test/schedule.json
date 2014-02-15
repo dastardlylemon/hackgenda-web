@@ -1,0 +1,40 @@
+[
+    {
+      "day": "Friday",
+      "events": [
+        {
+          "name": "Kickoff",
+          "description": "Start of hackathon",
+          "time": "6:30PM",
+          "duration": "2 hours",
+          "URL": "http://2014s.pennapps.com"
+        },
+        {
+          "name": "Dinner",
+          "description": "F00D!",
+          "time": "8:00PM",
+          "duration": "1 hour",
+          "URL": ""
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "events": [
+        {
+          "name": "Kickoff",
+          "description": "Start of hackathon",
+          "time": "6:30PM",
+          "duration": "2 hours",
+          "URL": "http://2014s.pennapps.com"
+        },
+        {
+          "name": "Dinner",
+          "description": "F00D!",
+          "time": "8:00PM",
+          "duration": "1 hour",
+          "URL": ""
+        }
+      ]
+    }
+]
