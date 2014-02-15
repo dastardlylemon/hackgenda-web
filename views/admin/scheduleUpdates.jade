@@ -7,16 +7,16 @@ block content
   each day in schedule
     h4 Day: #{day.day}
     each event in day.events
-      h5(class='col-sm-1 control-label') Name:
-      span(class='col-sm-5') #{event.name}
-      h5(class='col-sm-1 control-label') Start Time:
+      h5(class='col-sm-2 control-label') Name:
+      span(class='col-sm-2') #{event.name}
+      h5(class='col-sm-2 control-label') Start Time:
       span(class='col-sm-2') #{event.time}
-      h5(class='col-sm-1 control-label') End Time:
+      h5(class='col-sm-2 control-label') End Time:
       span(class='col-sm-2') #{event.endtime}
-      h5(class='col-sm-1 control-label') Description:
-      span(class='col-sm-11') #{event.description}
-      h5(class='col-sm-1 control-label') URL:
-      span(class='col-sm-11') #{event.url}
+      h5(class='col-sm-2 control-label') Description:
+      span(class='col-sm-10') #{event.description}
+      h5(class='col-sm-2 control-label') URL:
+      span(class='col-sm-10') #{event.url}
 
 
   form.form-horizontal(role='form', method='POST')
