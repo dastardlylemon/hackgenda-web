@@ -13,4 +13,4 @@ var scheduleSchema = new mongoose.Schema({
   events: [eventSchema]
 });
 
-module.exports = mongoose.model('Schema', sponsorSchema);
+module.exports = mongoose.model('Schema', scheduleSchema);
