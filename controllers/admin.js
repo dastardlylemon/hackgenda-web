@@ -28,8 +28,6 @@ exports.scheduleUpdates = function(req, res) {
   });
 };
 
-var x;
-
 exports.postScheduleUpdates = function(req, res) {
   if (req.user.isAdmin) {
     var evt = {
@@ -44,7 +42,7 @@ exports.postScheduleUpdates = function(req, res) {
         req.flash('error adding event');
         return req.send(err);
       } else {
-        req.flash('success', { msg: 'Event added' } );
+        res.flash('success', { msg: 'Event added' } );
         res.redirect('admin/scheduleUpdates');
       }
     });
