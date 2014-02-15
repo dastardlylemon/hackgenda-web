@@ -18,6 +18,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var adminController = require('./controllers/admin');
 
 /**
  * API keys + Passport configuration.
@@ -130,7 +131,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedi
  */
 
 //app.get('/admin/adminUpdates', apiController.adminUpdates);
-app.get('/admin/scheduleUpdates', apiController.scheduleUpdates);
+app.get('/admin/scheduleUpdates', adminController.scheduleUpdates);
 //app.get('/admin/sponsorUpdates', apiController.sponsorUpdates);
 //app.get('/admin/awardUpdates', apiController.awardUpdates);
 //app.get('/admin/socialUpdates', apiController.socialUpdates);
