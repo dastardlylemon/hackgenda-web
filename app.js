@@ -126,6 +126,18 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/', failureRedirect: '/login' }));
 
 /**
+ * Admin routes
+ */
+
+app.get('/admin/adminUpdates', apiController.adminUpdates);
+app.get('/admin/scheduleUpdates', apiController.scheduleUpdates);
+app.get('/admin/sponsorUpdates', apiController.sponsorUpdates);
+app.get('/admin/awardUpdates', apiController.awardUpdates);
+app.get('/admin/socialUpdates', apiController.socialUpdates);
+//app.post('/api',)
+
+
+/**
  * Start Express server.
  */
 

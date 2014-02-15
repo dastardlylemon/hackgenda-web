@@ -30,15 +30,15 @@
                 | Admin&nbsp;
                 i.caret
               ul.dropdown-menu
-                li: a(href='/admin/updates') Updates
+                li: a(href='/admin/updates') Send Updates
                 li.divider
-                li: a(href='/admin/schedule') Schedule
+                li: a(href='/admin/schedule') Update Schedule
                 li.divider
-                li: a(href='/admin/sponsors') Sponsors
+                li: a(href='/admin/sponsors') Update Sponsors
                 li.divider
-                li: a(href='/admin/awards') Awards
+                li: a(href='/admin/awards') Update Awards
                 li.divider
-                li: a(href='/admin/social') Social
+                li: a(href='/admin/social') Update Social
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
