@@ -17,7 +17,7 @@ var userSchema = new mongoose.Schema({
 
   profile: {
     name: { type: String, default: '' },
-    phone: { type: Number, default: '' }
+    phone: { type: Number, default: '' },
     company: { type: String, default: '' },
     email: { type: String, default: '' },
     gender: { type: String, default: '' },
