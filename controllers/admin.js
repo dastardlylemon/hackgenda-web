@@ -11,7 +11,7 @@ exports.adminUpdates = function(req, res) {
 };
 
 exports.scheduleUpdates = function(req, res) {
-  if (user.isAdmin) {
+  if (local.user.isAdmin) {
     res.render('admin/scheduleUpdates', {
       title: 'Update Schedule'
     });
