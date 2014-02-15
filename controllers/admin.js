@@ -45,7 +45,7 @@ exports.postScheduleUpdates = function(req, res) {
         return req.send(err);
       } else {
         req.flash('success', { msg: 'Event added' } );
-        res.redirect('schedule');
+        res.redirect('admin/scheduleUpdates');
       }
     });
   } else {
