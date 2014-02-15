@@ -5,13 +5,13 @@ block content
     h3 Update Schedule
 
   each day in schedule
-    span(class='col-sm-12 control-label') Day: #{day.day}
+    h4 Day: #{day.day}
     each event in day.events
-      span(class='col-sm-6 control-label') Name: #{event.name}
-      span(class='col-sm-3 control-label') Start Time: #{event.time}
-      span(class='col-sm-3 control-label') End Time: #{event.endtime}
-      span(class='col-sm-12 control-label') Description: #{event.description}
-      span(class='col-sm-12 control-label') URL: #{event.url}
+      h6(class='col-sm-6 control-label') Name: #{event.name}
+      h6(class='col-sm-3 control-label') Start Time: #{event.time}
+      h6(class='col-sm-3 control-label') End Time: #{event.endtime}
+      h6(class='col-sm-12 control-label') Description: #{event.description}
+      h6(class='col-sm-12 control-label') URL: #{event.url}
 
   form.form-horizontal(role='form', method='POST')
     input(type='hidden', name='_csrf', value=token)
