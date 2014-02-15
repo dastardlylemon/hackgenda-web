@@ -21,6 +21,7 @@ exports.scheduleUpdates = function(req, res) {
         title: 'Update Schedule',
         schedule: sched
       });
+      console.log(sched);
     } else {
       res.redirect('schedule');
     }
