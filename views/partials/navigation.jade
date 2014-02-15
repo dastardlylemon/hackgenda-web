@@ -26,7 +26,7 @@
         else
           if user.isAdmin
             li(class=title=='Sponsors'?'active':undefined)
-              a(href='/contact') Sponsors
+              a(href='/sponsors') Sponsors
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
