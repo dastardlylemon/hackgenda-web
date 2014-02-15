@@ -1,7 +1,7 @@
 var Schedule = require('../models/Schedule');
 
 exports.adminUpdates = function(req, res) {
-  if (user.isAdmin) {
+  if (req.user.isAdmin) {
     res.render('admin/adminUpdates', {
       title: 'Send Updates'
     });
@@ -11,7 +11,7 @@ exports.adminUpdates = function(req, res) {
 };
 
 exports.scheduleUpdates = function(req, res) {
-  if (local.user.isAdmin) {
+  if (req.user.isAdmin) {
     res.render('admin/scheduleUpdates', {
       title: 'Update Schedule'
     });
@@ -21,7 +21,7 @@ exports.scheduleUpdates = function(req, res) {
 };
 
 exports.sponsorUpdates = function(req, res) {
-  if (user.isAdmin) {
+  if (req.user.isAdmin) {
     res.render('admin/sponsorUpdates', {
       title: 'Update Sponsors'
     });
@@ -31,7 +31,7 @@ exports.sponsorUpdates = function(req, res) {
 };
 
 exports.awardUpdates = function(req, res) {
-  if (user.isAdmin) {
+  if (req.user.isAdmin) {
     res.render('admin/awardUpdates', {
       title: 'Update Awards'
     });
@@ -41,7 +41,7 @@ exports.awardUpdates = function(req, res) {
 };
 
 exports.socialUpdates = function(req, res) {
-  if (user.isAdmin) {
+  if (req.user.isAdmin) {
     res.render('admin/socialUpdates', {
       title: 'Update Social Media'
     });
