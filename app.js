@@ -129,11 +129,11 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedi
  * Admin routes
  */
 
-app.get('/admin/adminUpdates', apiController.adminUpdates);
+//app.get('/admin/adminUpdates', apiController.adminUpdates);
 app.get('/admin/scheduleUpdates', apiController.scheduleUpdates);
-app.get('/admin/sponsorUpdates', apiController.sponsorUpdates);
-app.get('/admin/awardUpdates', apiController.awardUpdates);
-app.get('/admin/socialUpdates', apiController.socialUpdates);
+//app.get('/admin/sponsorUpdates', apiController.sponsorUpdates);
+//app.get('/admin/awardUpdates', apiController.awardUpdates);
+//app.get('/admin/socialUpdates', apiController.socialUpdates);
 //app.post('/api',)
 
 
