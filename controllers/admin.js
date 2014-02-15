@@ -11,13 +11,21 @@ exports.adminUpdates = function(req, res) {
 };
 
 exports.scheduleUpdates = function(req, res) {
-  if (req.user.isAdmin) {
-    res.render('admin/scheduleUpdates', {
-      title: 'Update Schedule'
-    });
-  } else {
-    res.redirect('schedule');
-  }
+  Schedule.getSchedule(err, sched, function() {
+    if (err) {
+      req.flash('errors', errors);
+      return req.redirect('admin/scheduleUpdates');
+    }
+    if (req.user.isAdmin) {
+      res.render('admin/scheduleUpdates', {
+        title: 'Update Schedule',
+        schedule: sched
+      });
+    } else {
+      res.redirect('schedule');
+    }
+  });
+  
 };
 
 exports.sponsorUpdates = function(req, res) {
