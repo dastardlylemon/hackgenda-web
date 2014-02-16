@@ -2,24 +2,18 @@ extends layout
 
 block content
   .page-header
-    h3 Contact Form
+    h3 Chat
 
-  form.form-horizontal(role='form', method='POST')
-    input(type='hidden', name='_csrf', value=token)
-    .form-group
-      label(class='col-sm-2 control-label', for='name') Name
-      .col-sm-8
-        input.form-control(type='text', name='name', id='name', autofocus=true)
-    .form-group
-      label(class='col-sm-2 control-label', for='email') Email
-      .col-sm-8
-        input.form-control(type='text', name='email', id='email')
-    .form-group
-      label(class='col-sm-2 control-label', for='message') Body
-      .col-sm-8
-        textarea.form-control(type='text', name='message', id='message', rows='7')
-    .form-group
-      .col-sm-offset-2.col-sm-8
-        button.btn.btn-default(type='submit')
-          i.fa.fa-mail-forward
-          | Send
+  script(src='https://cdn.firebase.com/v0/firebase.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+  link(rel='stylesheet', href='/firechat/firechat-default.min.css')
+  script(src='/firechat/firechat-default.min.js')
+
+  #firechat-wrapper
+  script(type='text/javascript').
+    var chatRef = new Firebase('https://<your-firebase>.firebaseio.com/chat');
+    var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+    chat.setUser(#{id}, #{user.profile.name});
+    var firechatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
+    firechatRef.auth(#{token});
+
