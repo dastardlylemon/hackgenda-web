@@ -36,6 +36,7 @@ exports.addSponsor = function(cmpy, cb) {
       var company = new Sponsor({
         name: cmpy.name,
         tier: cmpy.tier,
+        description: cmpy.description,
         logourl: cmpy.logourl,
         url: cmpy.url,
         reps: cmpy.reps
@@ -51,6 +52,8 @@ exports.addSponsor = function(cmpy, cb) {
     } else {
       company.name = cmpy.name;
       company.tier = cmpy.tier || company.tier;
+      company.description = cmpy.description || company.description;
+      company.url = cmpy.url || company.url;
       company.logourl = cmpy.logourl || company.logo;
       if (!company.reps) {
         company.reps = [];
