@@ -30,6 +30,21 @@ exports.getSponsor = function(cb) {
   });
 }
 
+exports.sortSponsor = function(sponsors) {
+  var tiered = {};
+  for (var i = 0; i < sponsors.length; i++) {
+    if (!tiered[sponsors[i].tier]) {
+      tiered[sponsors[i].tier] = [];
+    }
+    tiered[sponsors[i].tier].push(sponsors[i]);
+  }
+  var tieredarray = [];
+  for (key in tiered) {
+    tieredarray.push(tiered[key]);
+  }
+  return tieredarray;
+}
+
 exports.addSponsor = function(cmpy, cb) {
   Sponsor.findOne({name:cmpy.name}, function(err, company) {
     console.log(company);
