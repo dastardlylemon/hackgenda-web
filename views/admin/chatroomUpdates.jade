@@ -8,7 +8,12 @@ block content
   script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
   script(src='/firechat/firechat-default.min.js')
 
-  input(type='hidden', name='_csrf', value=token)
+  div(class='alert alert-success animated fadeIn')
+    Chatroom successfully added!
+
+  script(type='text/javascript').
+    $('.alert').hide();
+
   .form-group
     label(class='col-sm-2 control-label', for='roomname') Chatroom Name
     .col-sm-8
@@ -24,5 +29,5 @@ block content
         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
         var chat = new Firechat(chatRef);
         var name = $('#roomname').val();
-        chat.createRoom(name, 'public', function(id) { console.log(id); });
+        chat.createRoom(name, 'public', function(id) { $('.alert').fadeIn(); });
     }
