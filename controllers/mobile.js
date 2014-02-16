@@ -45,16 +45,14 @@ exports.android = function(req, res) {
   });
 }
 
-exports.pushAndroidMessage = function(message, cb) {
+exports.pushAndroidMessage = function(msg, cb) {
   var message = new gcm.Message();
    
   //API Server Key
   var sender = new gcm.Sender(process.env.GCM_KEY);
   Push.getAndroidPush(function(err, registrationIds){
-    console.log("message");
-    console.log(message);
     // Value the payload data to send...
-    message.addData('message',message);
+    message.addData('message',msg);
     message.addData('title', 'Hackgenda');
     message.addData('msgcnt','3'); // Shows up in the notification in the status bar
     message.addData('soundname','beep.wav'); //Sound to play upon notification receipt - put in the www folder in app
