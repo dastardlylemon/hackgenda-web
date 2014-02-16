@@ -19,7 +19,6 @@ var userSchema = new mongoose.Schema({
     name: { type: String, default: '' },
     phone: { type: Number, default: '' },
     company: { type: String, default: '' },
-    email: { type: String, default: '' },
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     website: { type: String, default: '' },
