@@ -28,7 +28,7 @@ exports.getPush = function(cb) {
 
 exports.addAndroidPush = function(id, cb) {
   var android = new androidPushSchema({
-    id: id;
+    id: id
   });
   android.save(function(err, and) {
     if (err) {
