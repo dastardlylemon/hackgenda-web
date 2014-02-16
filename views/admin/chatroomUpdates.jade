@@ -23,7 +23,7 @@ block content
   script(type='text/javascript').
     function createGroup() {
         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
-        var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+        var chat = new Firechat(chatRef);
         var name = $('#roomname').value();
-        chat._chat.createGroup(name, 'public', function(id) { console.log(id); });
+        chat.createGroup(name, 'public', function(id) { console.log(id); });
     }
