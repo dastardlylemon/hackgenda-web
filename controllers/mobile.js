@@ -41,7 +41,7 @@ exports.android = function(req, res) {
       res.json(err);
     }
     res.json(and);
-    console.log(and);
+    console.log("android" + and);
   });
 }
 
