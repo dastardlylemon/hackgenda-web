@@ -146,6 +146,7 @@ app.get('/admin/scheduleUpdates', adminController.scheduleUpdates);
 app.post('/admin/scheduleUpdates', adminController.postScheduleUpdates);
 app.get('/admin/sponsorUpdates', adminController.sponsorUpdates);
 app.post('/admin/sponsorUpdates', adminController.postSponsorUpdates);
+app.get('/admin/chatroomUpdates', adminController.chatroomUpdates);
 //app.get('/admin/awardUpdates', adminController.awardUpdates);
 //app.get('/admin/socialUpdates', apiController.socialUpdates);
 //app.post('/api',)

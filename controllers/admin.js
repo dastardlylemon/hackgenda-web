@@ -139,3 +139,11 @@ exports.socialUpdates = function(req, res) {
     });
   }
 };
+
+exports.chatroomUpdates = function(req, res) {
+  if (req.user.isAdmin) {
+    res.render('admin/chatroomUpdates', {
+      title: 'Update Chatrooms'
+    });
+  }
+};
