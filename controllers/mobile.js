@@ -30,6 +30,7 @@ exports.announcements = function(req, res) {
     if (err) {
       res.json(err);
     }
+    push = push.reverse();
     res.json(push);
     //console.log(push);
   });
