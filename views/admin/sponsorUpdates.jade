@@ -4,9 +4,11 @@ block content
   .page-header
     h3 Sponsors
 
+  link(rel='stylesheet', href='/css/sponsor-custom.css')
+
   each tier, t in sponsor
     div(class='row')
-      h4(class='col-sm-12') Tier: #{t}
+      h4(class='col-sm-12') Tier #{t}
     each company in tier
       div(class='row')
         div(class='col-sm-3')
@@ -16,7 +18,7 @@ block content
         div(class='col-sm-9')
           each rep in company.reps
             div(class='sponsor-rep')
-              h5(class='rep-name') #{rep.name}:
+              h5(class='rep-name') #{rep.name}
               h6(class='rep-desc') #{rep.description}
               a(href="mailto:#{rep.email}")
                 h6 Email

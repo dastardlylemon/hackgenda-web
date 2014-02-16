@@ -1,0 +1,35 @@
+.sponsor-log {
+  max-width: 250px; 
+  max-height: 250px;
+}
+
+.sponsor-name, .sponsor-desc, .sponsor-rep {
+  text-align: center;
+}
+
+.sponsor-name {
+  font-size: 30px;
+}
+
+.sponsor-desc {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.sponsor-rep {
+  width: 200px;
+  float: left;
+}
+
+.sponsor-rep h6 {
+  font-size: 15px;
+}
+
+.rep-name {
+  font-size: 25px;
+}
+
+.rep-desc {
+  font-size: 20px !important;
+  font-weight: 200;
+}
