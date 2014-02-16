@@ -13,12 +13,13 @@ block content
 
   div(class='row')
     h4(class='col-sm-2')
-      | h5 Chatrooms
+      | Chatrooms
     h4(class='col-sm-10') 
        #firechat-wrapper
        script(type='text/javascript').
         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
         var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-        chat.setUser("#{id}", "#{user.profile.name}");
-        chatRef.auth("#{token}");    
-        var chat = new Firechat(chatRef);
+        chatRef.auth("#{token}");
+        var _chat = new Firechat(chatRef);
+        chat.setUser("#{id}", "#{user.profile.name}", function(user){_chat.resumeSession();});
+        setTimeout(function(){_chat.enterRoom('-JFsZPPERCxXSXDDIE33');}, 500);
