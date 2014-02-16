@@ -44,6 +44,7 @@ exports.addEvent = function(dayname, evnt, cb) {
         cb(null, sched);
       });
     } else {
+      console.log(day.events);
       day.events.push(evnt);
     
       day.save(function(err, sched) {
