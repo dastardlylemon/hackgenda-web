@@ -1,5 +1,7 @@
 var Schedule = require('../models/Schedule');
 var Sponsor = require('../models/Sponsor');
+var mobile = require('./mobile');
+var Push = require('../models/Push');
 
 exports.adminUpdates = function(req, res) {
   if (req.user && req.user.isAdmin) {
@@ -13,11 +15,20 @@ exports.adminUpdates = function(req, res) {
 
 exports.postAdminUpdates = function(req, res) {
   if (req.user && req.user.isAdmin) {
-    res.render('admin/adminUpdates', {
-      title: 'Send Updates'
+    var push = req.body;
+    Push.addPush(push, function(err, up) {
+      if (err) {
+        req.flash('error pushing update');
+        return res.json(err);
+      } else {
+        mobile.pushAndroidMessage(push.message);
+        req.flash('success', { msg: 'Event added' } );
+        res.redirect('admin/adminUpdates');
+      }
     });
   } else {
-    res.redirect('home');
+    res.flash('error', { msg: 'Permission denied.' });
+    res.json('permission denied');
   }
 };
 

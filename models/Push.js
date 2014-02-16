@@ -26,6 +26,30 @@ exports.getPush = function(cb) {
   });
 };
 
+exports.addPush = function(push, cb) {
+  var currentdate = new Date(); 
+  var datetime = "" + (currentdate.getMonth()+1) + "/" 
+    + currentdate.getDate() + "/"
+    + currentdate.getFullYear() + " "  
+    + currentdate.getHours() + ":"  
+    + currentdate.getMinutes();
+
+  var update = new Update({
+    name: push.name,
+    description: push.message,
+    author: push.author,
+    time: datetime
+  });
+  update.save(function(err, up) {
+    if (err) {
+      cb(err);
+      console.log(err);
+      return;
+    }
+    cb(null, up);
+  });
+};
+
 exports.addAndroidPush = function(id, cb) {
   var android = new Android({
     id: id
