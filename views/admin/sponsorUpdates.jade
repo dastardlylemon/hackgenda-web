@@ -31,14 +31,14 @@ block content
   form.form-horizontal(role='form', method='POST')
     input(type='hidden', name='_csrf', value=token)
     .form-group
-      label(class='col-sm-2 control-label', for='name') Name
+      label(class='col-sm-2 control-label', for='name') Sponsor Name
       .col-sm-4
         input.form-control(type='text', name='name', id='name')
       label(class='col-sm-2 control-label', for='tier') Tier
       .col-sm-2
         input.form-control(type='number', name='tier', id='tier')
     .form-group
-      label(class='col-sm-2 control-label', for='description') Description
+      label(class='col-sm-2 control-label', for='description') Sponsor Description
       .col-sm-8
         textarea.form-control(type='text', name='description', id='description', rows='3')
     .form-group
