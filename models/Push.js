@@ -47,6 +47,10 @@ exports.getAndroidPush = function(cb) {
       cb(err);
       return
     }
-    cb(null, and);
+    var ids = [];
+    for (var i = 0; i < and.length; i++) {
+      ids.push(and[i].id);
+    }
+    cb(null, ids);
   });
 };
