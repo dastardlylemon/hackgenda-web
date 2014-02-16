@@ -21,5 +21,5 @@ block content
         var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
         chat.setUser("#{id}", "#{user.profile.name}");
         chatRef.auth("#{token}");
-        setTimeout(function(){chat._chat.enterRoom('-JFsZPPERCxXSXDDIE33');}, 500);
-        var chat = new Firechat(chatRef);
+        var _chat = new Firechat(chatRef);
+        setTimeout(function(){_chat.enterRoom('-JFsZPPERCxXSXDDIE33');}, 500);
