@@ -10,6 +10,10 @@ exports.index = function(req, res) {
       res.json(err);
     }
     push = push.reverse();
+    var newpush = [];
+    for (var i = 0; i < 5; i++) {
+      newpush.push(push[i]);
+    }
     res.render('home', {
       title: 'Home',
       announcements: push
