@@ -9,17 +9,19 @@ block content
       h4(class='col-sm-12') Tier: #{t}
     each company in tier
       div(class='row')
-        img(class='col-sm-2' href='#{company.logourl}')
-        h5(class='col-sm-4 control-label') #{company.name}
-        h6(class='col-sm-6') #{company.description}
-      div(class='row')
-        each rep in company.reps
-          h5(class='col-sm-2 control-label') #{rep.name}:
-          h6(class='col-sm-4') #{rep.description}
-          a(href="mailto:#{rep.email}")
-            h6 Email
-          a(href="http://twitter.com/#{rep.twitter}")
-            h6 Twitter  
+        div(class='col-sm-3')
+          img(class='sponsor-log' src='#{company.logourl}')
+          h5(class='sponsor-name') #{company.name}
+          h6(class='sponsor-desc') #{company.description}
+        div(class='col-sm-9')
+          each rep in company.reps
+            div(class='sponsor-rep')
+              h5(class='rep-name') #{rep.name}:
+              h6(class='rep-desc') #{rep.description}
+              a(href="mailto:#{rep.email}")
+                h6 Email
+              a(href="http://twitter.com/#{rep.twitter}")
+                h6 Twitter  
 
   .page-header
     h3 Add Sponsor
