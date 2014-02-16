@@ -7,8 +7,9 @@ block content
   script(src='https://cdn.firebase.com/v0/firebase.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
   link(rel='stylesheet', href='/firechat/firechat-default.min.css')
-    link(rel='stylesheet', href='/firechat/firechat-custom.css')
+  link(rel='stylesheet', href='/firechat/firechat-custom.css')
   script(src='/firechat/firechat-default.min.js')
+  script(src='/firechat/helper.js')
 
   div(class='row')
     h4(class='col-sm-2')
@@ -21,4 +22,3 @@ block content
         chat.setUser("#{id}", "#{user.profile.name}");
         chatRef.auth("#{token}");    
         var chat = new Firechat(chatRef);
-        chat.getRoomList(function(r) {$.each(r, function(i, v) {});});
