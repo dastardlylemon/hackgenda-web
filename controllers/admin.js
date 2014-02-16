@@ -74,6 +74,7 @@ exports.sponsorUpdates = function(req, res) {
 
 function sortSponsor(sponsors) {
   var tiered = {};
+  console.log(sponsors);
   for (var i = 0; i < sponsors.length; i++) {
     if (!tiered[sponsors[i].tier]) {
       tiered[sponsors[i].tier] = [];
@@ -84,6 +85,7 @@ function sortSponsor(sponsors) {
   for (key in tiered) {
     tieredarray.push(tiered[key]);
   }
+  console.log(tieredarray);
   return tieredarray;
 }
 
@@ -93,6 +95,7 @@ exports.postSponsorUpdates = function(req, res) {
       name: req.body.name,
       tier: req.body.tier,
       logourl: req.body.logourl,
+      url: req.body.url,
       description: req.body.description,
     };
     if (!req.body.repname) {
