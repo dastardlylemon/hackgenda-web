@@ -7,21 +7,21 @@ block content
   each tier, t in sponsor
     div(class='row')
       h4(class='col-sm-12') Tier: #{t}
-  div(class='row')
     each company in tier
-      div(class='col-sm-3')
-        img(class='sponsor-log' src='#{company.logourl}')
-        h5(class='sponsor-name') #{company.name}
-        h6(class='sponsor-desc') #{company.description}
-      div(class='col-sm-9')
-        each rep in company.reps
-          div(class='sponsor-rep')
-            h5(class='rep-name') #{rep.name}:
-            h6(class='rep-desc') #{rep.description}
-            a(href="mailto:#{rep.email}")
-              h6 Email
-            a(href="http://twitter.com/#{rep.twitter}")
-              h6 Twitter  
+      div(class='row')
+        div(class='col-sm-3')
+          img(class='sponsor-log' src='#{company.logourl}')
+          h5(class='sponsor-name') #{company.name}
+          h6(class='sponsor-desc') #{company.description}
+        div(class='col-sm-9')
+          each rep in company.reps
+            div(class='sponsor-rep')
+              h5(class='rep-name') #{rep.name}:
+              h6(class='rep-desc') #{rep.description}
+              a(href="mailto:#{rep.email}")
+                h6 Email
+              a(href="http://twitter.com/#{rep.twitter}")
+                h6 Twitter  
 
   .page-header
     h3 Add Sponsor
