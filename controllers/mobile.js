@@ -1,7 +1,7 @@
 var Schedule = require('../models/Schedule');
 var Sponsor = require('../models/Sponsor');
 var Push = require('../models/Push');
-var user = require('user');
+var user = require('./user');
 var gcm = require('node-gcm');
 var twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_SID);
 
