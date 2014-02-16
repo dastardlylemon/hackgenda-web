@@ -5,7 +5,4 @@ function listChatrooms(chat, user) {
     });
   });
   console.log(user);
-  if (#{user.isAdmin} || #{user.isSponsor}) {
-    //expose options
-  }
 }
