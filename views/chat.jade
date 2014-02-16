@@ -20,6 +20,6 @@ block content
         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
         var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
         chatRef.auth("#{token}");
-        chat.setUser("#{id}", "#{user.profile.name} #{user.profile.company}", function(user){chat._chat.resumeSession();});
+        chat.setUser("#{id}", "#{user.profile.name} - #{user.profile.company}", function(user){chat._chat.resumeSession();});
         chat._chat.enterRoom('-JFsZPPERCxXSXDDIE33');
         listChatrooms(chat._chat, "#{user.isAdmin}", "#{user.isSponsor}");
