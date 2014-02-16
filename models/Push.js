@@ -24,10 +24,10 @@ exports.getPush = function(cb) {
     }
     cb(null, up);
   });
-}
+};
 
 exports.addAndroidPush = function(id, cb) {
-  var android = new androidPushSchema({
+  var android = new Android({
     id: id
   });
   android.save(function(err, and) {
@@ -38,7 +38,7 @@ exports.addAndroidPush = function(id, cb) {
     }
     cb(null, and);
   });
-}
+};
 
 exports.getAndroidPush = function(cb) {
   Android.find({}, function (err, and) {
@@ -49,4 +49,4 @@ exports.getAndroidPush = function(cb) {
     }
     cb(null, and);
   });
-}
+};

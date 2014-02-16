@@ -23,7 +23,7 @@ exports.sponsor = function(req, res) {
 };
 
 exports.android = function(req, res) {
-  Push.addAndroidSponsor(req.body.id, function(err, and) {
+  Push.addAndroidPush(req.param('id'), function(err, and) {
     if (err) {
       res.json(err);
     }

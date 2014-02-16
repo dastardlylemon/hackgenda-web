@@ -157,7 +157,7 @@ app.get('/admin/chatroomUpdates', adminController.chatroomUpdates);
 
 app.get('/mobile/schedule', mobileController.schedule);
 app.get('/mobile/sponsor', mobileController.sponsor);
-app.post('/mobile/android', mobileController.android);
+app.get('/mobile/android/:id', mobileController.android);
 
 /**
  * Start Express server.
