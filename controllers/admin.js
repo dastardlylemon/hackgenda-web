@@ -11,6 +11,16 @@ exports.adminUpdates = function(req, res) {
   }
 };
 
+exports.postAdminUpdates = function(req, res) {
+  if (req.user.isAdmin) {
+    res.render('admin/adminUpdates', {
+      title: 'Send Updates'
+    });
+  } else {
+    res.redirect('home');
+  }
+};
+
 exports.scheduleUpdates = function(req, res) {
   Schedule.getSchedule(function(err, sched) {
     if (err) {
