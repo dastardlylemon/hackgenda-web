@@ -51,7 +51,7 @@ exports.pushAndroidMessage = function(message, cb) {
   //API Server Key
   var sender = new gcm.Sender(process.env.GCM_KEY);
   Push.getAndroidPush(function(err, registrationIds){
-    console.log(registrationIds);
+    console.log(message);
     // Value the payload data to send...
     message.addData('message',message);
     message.addData('title', 'Hackgenda');
@@ -59,7 +59,7 @@ exports.pushAndroidMessage = function(message, cb) {
     message.addData('soundname','beep.wav'); //Sound to play upon notification receipt - put in the www folder in app
     //message.collapseKey = 'demo';
     //message.delayWhileIdle = true; //Default is false
-    message.timeToLive = 3000;// Duration in seconds to hold in GCM and retry before timing out. Default 4 weeks (2,419,200 seconds) if not specified.
+    message.timeToLive = 30000;// Duration in seconds to hold in GCM and retry before timing out. Default 4 weeks (2,419,200 seconds) if not specified.
      
     /**
      * Parameters: message-literal, registrationIds-array, No. of retries, callback-function
