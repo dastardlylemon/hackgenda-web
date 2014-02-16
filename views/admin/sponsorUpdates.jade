@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 Sponsors
+
+  each tier, t in sponsor
+    div(class='row')
+      h4(class='col-sm-12') Tier: #{t}
+    each company in tier
+      div(class='row')
+        img(class='col-sm-2' href='#{company.logourl}')
+        h5(class='col-sm-4 control-label') #{company.name}
+        h6(class='col-sm-6') #{company.description}
+      div(class='row')
+        each rep in company.reps
+        h5(class='col-sm-2 control-label') #{rep.name}:
+        h6(class='col-sm-4') #{rep.description}
+        a(href="mailto:#{rep.email}")
+          h6 Email
+        a(href="http://twitter.com/#{rep.twitter}")
+          h6 Twitter  
+
+  .page-header
+    h3 Add Company
+
+  form.form-horizontal(role='form', method='POST')
+    input(type='hidden', name='_csrf', value=token)
+    .form-group
+      label(class='col-sm-2 control-label', for='name') Name
+      .col-sm-8
+        input.form-control(type='text', name='name', id='name')
+    .form-group
+      label(class='col-sm-2 control-label', for='description') Description
+      .col-sm-8
+        textarea.form-control(type='text', name='description', id='description', rows='3')
+    .form-group
+      label(class='col-sm-2 control-label', for='day') Day
+      .col-sm-2
+        input.form-control(type='text', name='day', id='day')
+      label(class='col-sm-2 control-label', for='time') Start Time
+      .col-sm-1
+        input.form-control(type='text', name='time', id='time')
+      label(class='col-sm-2 control-label', for='time') End Time
+      .col-sm-1
+        input.form-control(type='text', name='endtime', id='endtime')
+    .form-group
+      label(class='col-sm-2 control-label', for='url') URL
+      .col-sm-8
+        input.form-control(type='text', name='url', id='url')
+    .form-group
+      .col-sm-offset-2.col-sm-8
+        button.btn.btn-default(type='submit')
+          i.fa.fa-mail-forward
+          | Add
