@@ -11,18 +11,18 @@ var androidPushSchema = new mongoose.Schema({
   id: { type: String, unique: true }
 });
 
-var Push = mongoose.model('Push', pushSchema);
+var Update = mongoose.model('Push', updateSchema);
 
 var Android = mongoose.model('Android', androidPushSchema);
 
 exports.getPush = function(cb) {
-  Sponsor.find({}, function (err, spsr) {
+  Update.find({}, function (err, up) {
     if (err) {
       console.log(err);
       cb(err);
       return
     }
-    cb(null, spsr);
+    cb(null, up);
   });
 }
 
