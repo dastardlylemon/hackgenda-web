@@ -19,7 +19,7 @@ block content
        script(type='text/javascript').
         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
         var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-        chat.setUser("#{id}", "#{user.profile.name}");
         chatRef.auth("#{token}");
         var _chat = new Firechat(chatRef);
+        chat.setUser("#{id}", "#{user.profile.name}", function(user){_chat.resumeSession();});
         setTimeout(function(){_chat.enterRoom('-JFsZPPERCxXSXDDIE33');}, 500);
