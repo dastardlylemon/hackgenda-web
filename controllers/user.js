@@ -132,6 +132,8 @@ exports.postUpdateProfile = function(req, res, next) {
     user.profile.gender = req.body.gender || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';
+    user.profile.phone = req.body.phone || '';
+    user.profile.company = req.body.company || '';
 
     user.save(function(err) {
       if (err) return next(err);
