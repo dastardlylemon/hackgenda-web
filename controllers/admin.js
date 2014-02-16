@@ -2,9 +2,9 @@ var Schedule = require('../models/Schedule');
 var Sponsor = require('../models/Sponsor');
 
 exports.adminUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/adminUpdates', {
-      title: 'Send Updates'
+      title: 'Send Announcement'
     });
   } else {
     res.redirect('home');
@@ -12,7 +12,7 @@ exports.adminUpdates = function(req, res) {
 };
 
 exports.postAdminUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/adminUpdates', {
       title: 'Send Updates'
     });
@@ -27,7 +27,7 @@ exports.scheduleUpdates = function(req, res) {
       req.flash('errors', errors);
       return req.redirect('admin/scheduleUpdates');
     }
-    if (req.user.isAdmin) {
+    if (req.user && req.user.isAdmin) {
       res.render('admin/scheduleUpdates', {
         title: 'Update Schedule',
         schedule: sched
@@ -40,7 +40,7 @@ exports.scheduleUpdates = function(req, res) {
 };
 
 exports.postScheduleUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     var evt = {
       name: req.body.name,
       description: req.body.description,
@@ -69,7 +69,7 @@ exports.sponsorUpdates = function(req, res) {
       req.flash('errors', errors);
       return req.redirect('admin/sponsorUpdates');
     }
-    if (req.user.isAdmin) {
+    if (req.user && req.user.isAdmin) {
       spsr = Sponsor.sortSponsor(spsr);
       res.render('admin/sponsorUpdates', {
         title: 'Update Sponsor',
@@ -85,7 +85,7 @@ exports.sponsorUpdates = function(req, res) {
 
 
 exports.postSponsorUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     var sponsor = req.body;
     
     console.log(sponsor);
@@ -104,7 +104,7 @@ exports.postSponsorUpdates = function(req, res) {
   }
 };
 exports.awardUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/awardUpdates', {
       title: 'Update Awards'
     });
@@ -114,7 +114,7 @@ exports.awardUpdates = function(req, res) {
 };
 
 exports.socialUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/socialUpdates', {
       title: 'Update Social Media'
     });
@@ -122,7 +122,7 @@ exports.socialUpdates = function(req, res) {
 };
 
 exports.chatroomUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/chatroomUpdates', {
       title: 'Update Chatrooms'
     });
