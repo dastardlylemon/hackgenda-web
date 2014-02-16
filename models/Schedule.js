@@ -18,7 +18,7 @@ var Schedule = mongoose.model('Schedule', scheduleSchema);
 exports.getSchedule = function(cb) {
   Schedule.find({}, function (err, sched) {
     if (err) {
-      console.log(err);
+      //console.log(err);
       cb(err);
       return
     }
@@ -28,8 +28,8 @@ exports.getSchedule = function(cb) {
 
 exports.addEvent = function(dayname, evnt, cb) {
   Schedule.findOne({day:dayname}, function(err, day) {
-    console.log(day);
-    console.log(day.day);
+    //console.log(day);
+    //console.log(day.day);
     if (err || !day.day) {
       var schedule = new Schedule({
         day: dayname,
@@ -38,19 +38,19 @@ exports.addEvent = function(dayname, evnt, cb) {
       schedule.save(function(err, sched) {
         if (err) {
           cb(err);
-          console.log(err);
+          //console.log(err);
           return;
         }
         cb(null, sched);
       });
     } else {
-      console.log(day.events);
+      //console.log(day.events);
       day.events.push(evnt);
     
       day.save(function(err, sched) {
         if (err) {
           cb(err);
-          console.log(err);
+          //console.log(err);
           return;
         }
         cb(null, sched);
