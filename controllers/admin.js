@@ -99,7 +99,7 @@ exports.postSponsorUpdates = function(req, res) {
         description: req.body.reps.description,
         email: req.body.reps.email,
         twitter: req.body.reps.twitter
-      }];
+      }]
     };
     Sponsor.addCompany(sponsor, function(err, company) {
       if (err) {
