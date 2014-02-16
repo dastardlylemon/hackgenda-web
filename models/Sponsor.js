@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var repSchema = new mongoose.Schema({
   name: { type: String, unique: true },
   description: { type: String },
-  email: { type: String, unique: true},
-  twitter: { type: String, unique: true}
+  email: { type: String },
+  twitter: { type: String }
 });
 
 var companySchema = new mongoose.Schema({
@@ -12,6 +12,7 @@ var companySchema = new mongoose.Schema({
   description: { type: String },
   tier: { type: Number },
   logourl: { type: String },
+  award: { type: Boolean },
   url: { type: String },
   reps: [repSchema]
 });
@@ -53,9 +54,8 @@ exports.addSponsor = function(cmpy, cb) {
       if (!company.reps) {
         company.reps = [];
       }
-      for (var i = 0; i < cmpy.reps.length; i++) {
-        company.reps.push(evnt);
-      }
+      var reps = cmpy.
+      company.reps.push(cmpy.reps);]
     
       company.save(function(err, spsr) {
         if (err) {
