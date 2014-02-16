@@ -14,6 +14,23 @@ exports.getLogin = function(req, res) {
   });
 };
 
+exports.getNumbers = function(cb){
+  User.find({}, function (err, users) {
+    if (err) {
+      console.log(err);
+      cb(err);
+      return
+    }
+    var nums = [];
+    for (var i = 0; i < users.length; i++) {
+      if (users[i].profile.phone && users[i].profile.phone != "") {
+        nums.push(users[i].profile.phone);
+      }
+    }
+    cb(null, nums);
+  });
+};
+
 /**
  * POST /login
  * Sign in using email and password.

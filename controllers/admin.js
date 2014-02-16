@@ -1,10 +1,12 @@
 var Schedule = require('../models/Schedule');
 var Sponsor = require('../models/Sponsor');
+var mobile = require('./mobile');
+var Push = require('../models/Push');
 
 exports.adminUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/adminUpdates', {
-      title: 'Send Updates'
+      title: 'Send Announcement'
     });
   } else {
     res.redirect('home');
@@ -12,12 +14,25 @@ exports.adminUpdates = function(req, res) {
 };
 
 exports.postAdminUpdates = function(req, res) {
-  if (req.user.isAdmin) {
-    res.render('admin/adminUpdates', {
-      title: 'Send Updates'
+  if (req.user && req.user.isAdmin) {
+    var push = req.body;
+    push.author = req.user.profile.name;
+    console.log(push);
+    Push.addPush(push, function(err, up) {
+      if (err) {
+        req.flash('error pushing update');
+        return res.json(err);
+      } else {
+        if (push.push) {
+          mobile.pushAndroidMessage(push.name, push.message);
+        }
+        req.flash('success', { msg: 'Message sent' } );
+        res.redirect('admin/adminUpdates');
+      }
     });
   } else {
-    res.redirect('home');
+    res.flash('error', { msg: 'Permission denied.' });
+    res.json('permission denied');
   }
 };
 
@@ -27,12 +42,12 @@ exports.scheduleUpdates = function(req, res) {
       req.flash('errors', errors);
       return req.redirect('admin/scheduleUpdates');
     }
-    if (req.user.isAdmin) {
+    if (req.user && req.user.isAdmin) {
       res.render('admin/scheduleUpdates', {
         title: 'Update Schedule',
         schedule: sched
       });
-      console.log(sched);
+      //console.log(sched);
     } else {
       res.redirect('schedule');
     }
@@ -40,7 +55,7 @@ exports.scheduleUpdates = function(req, res) {
 };
 
 exports.postScheduleUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     var evt = {
       name: req.body.name,
       description: req.body.description,
@@ -69,13 +84,13 @@ exports.sponsorUpdates = function(req, res) {
       req.flash('errors', errors);
       return req.redirect('admin/sponsorUpdates');
     }
-    if (req.user.isAdmin) {
+    if (req.user && req.user.isAdmin) {
       spsr = Sponsor.sortSponsor(spsr);
       res.render('admin/sponsorUpdates', {
         title: 'Update Sponsor',
         sponsor: spsr
       });
-      console.log(spsr);
+      //console.log(spsr);
     } else {
       res.redirect('sponsor');
     }
@@ -85,10 +100,10 @@ exports.sponsorUpdates = function(req, res) {
 
 
 exports.postSponsorUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     var sponsor = req.body;
     
-    console.log(sponsor);
+    //console.log(sponsor);
     Sponsor.addSponsor(sponsor, function(err, company) {
       if (err) {
         req.flash('error adding company');
@@ -104,7 +119,7 @@ exports.postSponsorUpdates = function(req, res) {
   }
 };
 exports.awardUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/awardUpdates', {
       title: 'Update Awards'
     });
@@ -114,7 +129,7 @@ exports.awardUpdates = function(req, res) {
 };
 
 exports.socialUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/socialUpdates', {
       title: 'Update Social Media'
     });
@@ -122,7 +137,7 @@ exports.socialUpdates = function(req, res) {
 };
 
 exports.chatroomUpdates = function(req, res) {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     res.render('admin/chatroomUpdates', {
       title: 'Update Chatrooms'
     });

@@ -33,7 +33,7 @@
           if user.isSponsor
             li.dropdown(class=title=='Admin'?'active':undefined)
               a.dropdown-toggle(href='#', data-toggle='dropdown')
-                | Admin&nbsp;
+                | Sponsor&nbsp;
                 i.caret
               ul.dropdown-menu
                 li: a(href='/admin/sponsorUpdates') Update Sponsors
@@ -47,7 +47,7 @@
                 | Admin&nbsp;
                 i.caret
               ul.dropdown-menu
-                li: a(href='/admin/adminUpdates') Send Updates
+                li: a(href='/admin/adminUpdates') Send Announcement
                 li.divider
                 li: a(href='/admin/scheduleUpdates') Update Schedule
                 li.divider
