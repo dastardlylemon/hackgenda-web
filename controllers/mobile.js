@@ -12,7 +12,7 @@ exports.schedule = function(req, res) {
 };
 
 exports.sponsor = function(req, res) {
-  Schedule.getSponsor(function(err, spsr) {
+  Sponsor.getSponsor(function(err, spsr) {
     if (err) {
       res.json(err);
     }
