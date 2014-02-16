@@ -8,6 +8,10 @@
   color: #fff;
 }
 
+#wrap h1 {
+  font-size: 60px;
+}
+
 #footer {
   opacity: 0.7;
 }
