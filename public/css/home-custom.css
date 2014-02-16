@@ -1,3 +1,9 @@
-#wrap {
+#wrap  {
   background-image: url('../img/bg.jpg');
+  background-size: cover;
+  background-position: center 0;
+}
+
+#wrap h1, #wrap p.lead {
+  color: #fff;
 }
