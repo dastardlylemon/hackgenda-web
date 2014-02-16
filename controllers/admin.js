@@ -16,7 +16,7 @@ exports.adminUpdates = function(req, res) {
 exports.postAdminUpdates = function(req, res) {
   if (req.user && req.user.isAdmin) {
     var push = req.body;
-    push.user = req.user.profile.name;
+    push.author = req.user.profile.name;
     console.log(push);
     Push.addPush(push, function(err, up) {
       if (err) {
