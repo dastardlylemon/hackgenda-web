@@ -1,3 +1,9 @@
-.half.dropdown, .dropdown.twofifth {
+#firechat-wrapper .half.dropdown, #firechat-wrapper .dropdown.twofifth {
   display: none;
+}
+
+.room-link {
+  font-weight: 200;
+  margin: 10px;
+  cursor: pointer;
 }
