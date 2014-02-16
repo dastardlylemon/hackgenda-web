@@ -89,21 +89,7 @@ function sortSponsor(sponsors) {
 
 exports.postSponsorUpdates = function(req, res) {
   if (req.user.isAdmin) {
-    var sponsor = {
-      name: req.body.name,
-      tier: req.body.tier,
-      logourl: req.body.logourl,
-      url: req.body.url,
-      description: req.body.description,
-    };
-    if (!req.body.repname) {
-      var reps = {
-        name: req.body.repname,
-        description: req.body.description,
-        email: req.body.repemail,
-        twitter: req.body.reptwitter
-      };
-      sponsor.reps = reps;
+      var sponsor = req.body;
     }
     console.log(sponsor);
     Sponsor.addSponsor(sponsor, function(err, company) {
