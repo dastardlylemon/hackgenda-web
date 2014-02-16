@@ -100,13 +100,12 @@ exports.postSponsorUpdates = function(req, res) {
         req.flash('success', { msg: 'Company added' } );
         res.redirect('admin/sponsorUpdates');
       }
-    }
+    });
   } else {
     res.flash('error', { msg: 'Permission denied.' });
     res.json('permission denied');
   }
 };
-
 exports.awardUpdates = function(req, res) {
   if (req.user.isAdmin) {
     res.render('admin/awardUpdates', {
