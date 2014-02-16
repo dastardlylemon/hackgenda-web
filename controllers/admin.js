@@ -74,7 +74,6 @@ exports.sponsorUpdates = function(req, res) {
 
 function sortSponsor(sponsors) {
   var tiered = {};
-  console.log(sponsors);
   for (var i = 0; i < sponsors.length; i++) {
     if (!tiered[sponsors[i].tier]) {
       tiered[sponsors[i].tier] = [];
@@ -85,12 +84,13 @@ function sortSponsor(sponsors) {
   for (key in tiered) {
     tieredarray.push(tiered[key]);
   }
-  console.log(tieredarray);
   return tieredarray;
 }
 
 exports.postSponsorUpdates = function(req, res) {
   if (req.user.isAdmin) {
+    console.log("body");
+    console.log(req.body);
     var sponsor = {
       name: req.body.name,
       tier: req.body.tier,
