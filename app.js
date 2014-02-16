@@ -112,7 +112,7 @@ app.get('/logout', userController.logout);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/chat', webController.getChat);
-app.get('/chat', webController.getSchedule);
+app.get('/schedule', webController.getSchedule);
 //app.post('/chat', contactController.postContact);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
