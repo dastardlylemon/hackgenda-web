@@ -16,7 +16,7 @@ var companySchema = new mongoose.Schema({
   reps: [repSchema]
 });
 
-var Sponsor = mongoose.model('Sponsor', sponsorSchema);
+var Sponsor = mongoose.model('Sponsor', companySchema);
 
 exports.getSponsor = function(cb) {
   Sponsor.find({}, function (err, spsr) {

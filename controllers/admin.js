@@ -76,9 +76,9 @@ function sortSponsor(sponsors) {
   var tiered = {};
   for (var i = 0; i < sponsors.length; i++) {
     if (!tiered[sponsors[i].tier]) {
-      tiered[sponsors[i].tier = [];
+      tiered[sponsors[i].tier] = [];
     }
-    tiered[sponsors[i].tier.push(sponsors[i]);
+    tiered[sponsors[i].tier].push(sponsors[i]);
   }
   var tieredarray = [];
   for (key in tiered) {
@@ -99,7 +99,7 @@ exports.postSponsorUpdates = function(req, res) {
         description: req.body.reps.description,
         email: req.body.reps.email,
         twitter: req.body.reps.twitter
-      }];
+      }]
     };
     Sponsor.addCompany(sponsor, function(err, company) {
       if (err) {
