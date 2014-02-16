@@ -11,8 +11,6 @@
       ul.nav.navbar-nav
         li(class=title=='Home'?'active':undefined)
           a(href='/') Home
-        li(class=title=='API Browser'?'active':undefined)
-          a(href='/api') API Browser
         li(class=title=='Schedule'?'active':undefined)
           a(href='/schedule') Schedule
         li(class=title=='Sponsors'?'active':undefined)
@@ -32,6 +30,17 @@
             li(class=title=='Register'?'active':undefined)
               a(href='/signup') Register
         else
+          if user.isSponsor
+            li.dropdown(class=title=='Admin'?'active':undefined)
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Admin&nbsp;
+                i.caret
+              ul.dropdown-menu
+                li: a(href='/admin/sponsorUpdates') Update Sponsors
+                li.divider
+                li: a(href='/admin/awardsUpdates') Update Awards
+                li.divider
+                li: a(href='/admin/chatroomUpdates') Update Chatrooms
           if user.isAdmin
             li.dropdown(class=title=='Admin'?'active':undefined)
               a.dropdown-toggle(href='#', data-toggle='dropdown')

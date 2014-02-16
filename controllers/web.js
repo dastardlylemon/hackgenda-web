@@ -29,11 +29,26 @@ exports.getSchedule = function(req, res) {
   Schedule.getSchedule(function(err, sched) {
     if (err) {
       req.flash('errors', errors);
-      return req.redirect('schedule');
+      return req.redirect('home');
     }
     res.render('schedule', {
       title: 'Schedule',
       schedule: sched
     });
+  });
+};
+
+exports.sponsorUpdates = function(req, res) {
+  Sponsor.getSponsor(function(err, spsr) {
+    if (err) {
+      req.flash('errors', errors);
+      return req.redirect('home');
+    }
+    spsr = sortSponsor(spsr);
+    res.render('sponsor', {
+      title: 'Sponsor',
+      sponsor: spsr
+    });
+    console.log(spsr);
   });
 };
