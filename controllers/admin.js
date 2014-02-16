@@ -24,7 +24,7 @@ exports.postAdminUpdates = function(req, res) {
         return res.json(err);
       } else {
         if (push.push) {
-          mobile.pushAndroidMessage(push.message);
+          mobile.pushAndroidMessage(push.name, push.message);
         }
         req.flash('success', { msg: 'Message sent' } );
         res.redirect('admin/adminUpdates');
