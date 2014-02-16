@@ -22,10 +22,10 @@ exports.postAdminUpdates = function(req, res) {
         req.flash('error pushing update');
         return res.json(err);
       } else {
-        if (push.android) {
+        if (push.push) {
           mobile.pushAndroidMessage(push.message);
         }
-        req.flash('success', { msg: 'Event added' } );
+        req.flash('success', { msg: 'Message sent' } );
         res.redirect('admin/adminUpdates');
       }
     });
