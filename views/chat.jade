@@ -22,4 +22,4 @@ block content
         chatRef.auth("#{token}");
         chat.setUser("#{id}", "#{user.profile.name}", function(user){chat._chat.resumeSession();});
         chat._chat.enterRoom('-JFsZPPERCxXSXDDIE33');
-        listChatrooms(chat._chat, "#{user.isAdmin}");
+        listChatrooms(chat._chat, "#{user.isAdmin}", "#{user.isSponsor}");
