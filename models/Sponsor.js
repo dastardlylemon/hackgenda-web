@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 
 var repSchema = new mongoose.Schema({
-  name: { type: String, unique: true },
+  name: { type: String },
   description: { type: String },
   email: { type: String },
   twitter: { type: String }
 });
 
 var companySchema = new mongoose.Schema({
-  name: { type: String },
+  name: { type: String, unique: true },
   description: { type: String },
   tier: { type: Number },
   logourl: { type: String },
