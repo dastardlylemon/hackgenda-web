@@ -159,6 +159,7 @@ app.get('/admin/chatroomUpdates', adminController.chatroomUpdates);
 
 app.get('/mobile/schedule', mobileController.schedule);
 app.get('/mobile/sponsor', mobileController.sponsor);
+app.get('/mobile/announcement', mobileController.announcements);
 app.get('/mobile/android/:id', mobileController.android);
 
 /**
