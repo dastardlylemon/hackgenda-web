@@ -78,7 +78,7 @@ function sortSponsor(sponsors) {
     if (!tiered[sponsors[i].tier]) {
       tiered[sponsors[i].tier] = [];
     }
-    tiered[sponsors[i].tier.push(sponsors[i]);
+    tiered[sponsors[i].tier].push(sponsors[i]);
   }
   var tieredarray = [];
   for (key in tiered) {
