@@ -21,7 +21,9 @@ exports.postAdminUpdates = function(req, res) {
         req.flash('error pushing update');
         return res.json(err);
       } else {
-        mobile.pushAndroidMessage(push.message);
+        if (push.android) {
+          mobile.pushAndroidMessage(push.message);
+        }
         req.flash('success', { msg: 'Event added' } );
         res.redirect('admin/adminUpdates');
       }
