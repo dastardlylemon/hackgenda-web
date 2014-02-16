@@ -4,14 +4,26 @@ block content
   .page-header
     h3 Add Chatroom
 
-  form.form-horizontal(role='form', method='POST')
+  script(src='https://cdn.firebase.com/v0/firebase.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+  script(src='/firechat/firechat-default.min.js')
+
+  form.form-horizontal(role='form')
     input(type='hidden', name='_csrf', value=token)
     .form-group
-      label(class='col-sm-2 control-label', for='logourl') Chatroom Name
+      label(class='col-sm-2 control-label', for='roomname') Chatroom Name
       .col-sm-8
-        input.form-control(type='text', name='logourl', id='logourl')
+        input.form-control(type='text', name='roomname', id='roomname')
     .form-group
       .col-sm-offset-2.col-sm-8
-        button.btn.btn-default(type='submit')
+        button.btn.btn-default(onclick='createGroup()')
           i.fa.fa-mail-forward
           | Add
+
+  script(type='text/javascript').
+    function createGroup() {
+        var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
+        var chat = new Firechat(chatRef);
+        var name = $('#roomname').value();
+        chat.createGroup(name, 'public', function(id) { console.log(id); });
+    }
