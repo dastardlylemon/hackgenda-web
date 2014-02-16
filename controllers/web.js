@@ -45,7 +45,7 @@ exports.getSponsor = function(req, res) {
       req.flash('errors', errors);
       return req.redirect('home');
     }
-    spsr = sortSponsor(spsr);
+    spsr = Sponsor.sortSponsor(spsr);
     res.render('sponsor', {
       title: 'Sponsor',
       sponsor: spsr

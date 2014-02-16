@@ -70,7 +70,7 @@ exports.sponsorUpdates = function(req, res) {
       return req.redirect('admin/sponsorUpdates');
     }
     if (req.user.isAdmin) {
-      spsr = sortSponsor(spsr);
+      spsr = Sponsor.sortSponsor(spsr);
       res.render('admin/sponsorUpdates', {
         title: 'Update Sponsor',
         sponsor: spsr
@@ -83,20 +83,6 @@ exports.sponsorUpdates = function(req, res) {
 };
 
 
-function sortSponsor(sponsors) {
-  var tiered = {};
-  for (var i = 0; i < sponsors.length; i++) {
-    if (!tiered[sponsors[i].tier]) {
-      tiered[sponsors[i].tier] = [];
-    }
-    tiered[sponsors[i].tier].push(sponsors[i]);
-  }
-  var tieredarray = [];
-  for (key in tiered) {
-    tieredarray.push(tiered[key]);
-  }
-  return tieredarray;
-}
 
 exports.postSponsorUpdates = function(req, res) {
   if (req.user.isAdmin) {
