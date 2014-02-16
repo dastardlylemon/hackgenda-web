@@ -40,10 +40,10 @@ exports.postScheduleUpdates = function(req, res) {
     Schedule.addEvent(req.body.day, evt, function(err, sched) {
       if (err) {
         req.flash('error adding event');
-        return req.json(err);
+        return res.json(err);
       } else {
-        res.flash('success', { msg: 'Event added' } );
-        res.redirect('admin/scheduleUpdates');
+        req.flash('success', { msg: 'Event added' } );
+        req.redirect('admin/scheduleUpdates');
       }
     });
   } else {
