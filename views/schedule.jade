@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .page-header
+    h3 Schedule
+
+  each day in schedule
+    div(class='row')
+      h4(class='col-sm-12') Day: #{day.day}
+    each event in day.events
+      div(class='row')
+        h5(class='col-sm-2 control-label') Name:
+        h6(class='col-sm-2') #{event.name}
+        h5(class='col-sm-2 control-label') Start Time:
+        h6(class='col-sm-2') #{event.time}
+        h5(class='col-sm-2 control-label') End Time:
+        h6(class='col-sm-2') #{event.endtime}
+      div(class='row')
+        h5(class='col-sm-2 control-label') Description:
+        h6(class='col-sm-10') #{event.description}
+      div(class='row')
+        h5(class='col-sm-2 control-label') URL:
+        h6(class='col-sm-10') #{event.url}

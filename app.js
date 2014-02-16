@@ -17,7 +17,7 @@ var expressValidator = require('express-validator');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
-var chatController = require('./controllers/chat');
+var webController = require('./controllers/web');
 var adminController = require('./controllers/admin');
 var mobileController = require('./controllers/mobile');
 
@@ -111,7 +111,8 @@ app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
-app.get('/chat', chatController.getChat);
+app.get('/chat', webController.getChat);
+app.get('/chat', webController.getSchedule);
 //app.post('/chat', contactController.postContact);
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
