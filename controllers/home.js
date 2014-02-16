@@ -10,9 +10,13 @@ exports.index = function(req, res) {
       res.json(err);
     }
     push = push.reverse();
+    var newpush = [];
+    for (var i = 0; i < 3; i++) {
+      newpush.push(push[i]);
+    }
     res.render('home', {
       title: 'Home',
-      announcements: push
+      announcements: newpush
     });
   });
 };
