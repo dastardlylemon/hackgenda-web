@@ -9,9 +9,11 @@ block content
   link(rel='stylesheet', href='/firechat/firechat-default.min.css')
   script(src='/firechat/firechat-default.min.js')
 
-  #firechat-wrapper
-  script(type='text/javascript').
-    var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
-    var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-    chat.setUser("#{id}", "#{user.profile.name}");
-    chatRef.auth("#{token}");
+  div(class='row')
+     h4(class='col-sm-12') 
+       #firechat-wrapper
+       script(type='text/javascript').
+         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
+         var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+         chat.setUser("#{id}", "#{user.profile.name}");
+         chatRef.auth("#{token}");    
