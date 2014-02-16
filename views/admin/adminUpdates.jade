@@ -7,19 +7,23 @@ block content
   form.form-horizontal(role='form', method='POST')
     input(type='hidden', name='_csrf', value=token)
     .form-group
+      label(class='col-sm-1 control-label', for='name') Name
+      .col-sm-3
+        input.form-control(type='text', name='name', id='name')
+      label(class='col-sm-1 control-label', for='push') Push
+      .col-sm-1
+        input.form-control(type='checkbox', name='push', id='push')
+      label(class='col-sm-1 control-label', for='text') Text
+      .col-sm-1
+        input.form-control(type='checkbox', name='text', id='text')
+      label(class='col-sm-1 control-label', for='iOS') Email
+      .col-sm-1
+        input.form-control(type='checkbox', name='iOS', id='iOS')
+    .form-group
       label(class='col-sm-2 control-label', for='message') Message
       .col-sm-8
         input.form-control(type='text', name='message', id='message')
-    .form-group
-      label(class='col-sm-2 control-label', for='push') Push
-      .col-sm-1
-        input.form-control(type='checkbox', name='push', id='push')
-      label(class='col-sm-2 control-label', for='text') Text
-      .col-sm-1
-        input.form-control(type='checkbox', name='text', id='text')
-      label(class='col-sm-2 control-label', for='iOS') Email
-      .col-sm-1
-        input.form-control(type='checkbox', name='iOS', id='iOS')
+    
     .form-group
       .col-sm-offset-2.col-sm-8
         button.btn.btn-default(type='submit')
