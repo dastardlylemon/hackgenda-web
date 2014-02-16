@@ -15,7 +15,7 @@ exports.getChat = function(req, res) {
     var token = tokenGenerator.createToken({id: id});
   } else {
     req.flash('errors', { msg: 'Please sign in with Twitter or Facebook.' });
-    res.redirect('/login ');
+    res.redirect('/login');
   }
   res.render('chat', {
     title: 'Chat',

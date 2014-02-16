@@ -7,13 +7,21 @@ block content
   script(src='https://cdn.firebase.com/v0/firebase.js')
   script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
   link(rel='stylesheet', href='/firechat/firechat-default.min.css')
+    link(rel='stylesheet', href='/firechat/firechat-custom.css')
   script(src='/firechat/firechat-default.min.js')
 
   div(class='row')
-     h4(class='col-sm-12') 
+    h4(class='col-sm-2')
+      h5 Chatrooms
+    h4(class='col-sm-10') 
        #firechat-wrapper
        script(type='text/javascript').
-         var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
-         var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-         chat.setUser("#{id}", "#{user.profile.name}");
-         chatRef.auth("#{token}");    
+        var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
+        var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+        chat.setUser("#{id}", "#{user.profile.name}");
+        chatRef.auth("#{token}");    
+        var chat = new Firechat(chatRef);
+        var 
+        if (#{user.isAdmin} || #{user.isSponsor}) {
+            //expose options
+        }
