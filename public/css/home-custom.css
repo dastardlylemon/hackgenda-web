@@ -7,3 +7,7 @@
 #wrap h1, #wrap p.lead {
   color: #fff;
 }
+
+#footer {
+  opacity: 0.7;
+}
