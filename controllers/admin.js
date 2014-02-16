@@ -84,6 +84,7 @@ function sortSponsor(sponsors) {
   for (key in tiered) {
     tieredarray.push(tiered[key]);
   }
+  console.log(tieredarray);
   return tieredarray;
 }
 
@@ -93,6 +94,7 @@ exports.postSponsorUpdates = function(req, res) {
       name: req.body.name,
       tier: req.body.tier,
       logourl: req.body.logourl,
+      url: req.body.url,
       description: req.body.description,
     };
     if (!req.body.repname) {

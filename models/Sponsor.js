@@ -37,6 +37,7 @@ exports.addSponsor = function(cmpy, cb) {
         name: cmpy.name,
         tier: cmpy.tier,
         logourl: cmpy.logourl,
+        url: cmpy.url,
         reps: cmpy.reps
       });
       company.save(function(err, spsr) {
