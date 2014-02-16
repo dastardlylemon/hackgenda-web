@@ -12,7 +12,7 @@ block content
   script(src='/firechat/helper.js')
 
   div(class='row')
-    h4(class='col-sm-2')
+    h4(class='col-sm-2' id='chatroom-list')
       | Chatrooms
     h4(class='col-sm-10') 
        #firechat-wrapper
@@ -22,3 +22,4 @@ block content
         chatRef.auth("#{token}");
         chat.setUser("#{id}", "#{user.profile.name}", function(user){chat._chat.resumeSession();});
         chat._chat.enterRoom('-JFsZPPERCxXSXDDIE33');
+        listChatrooms(chat._chat, "#{user}");
