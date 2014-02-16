@@ -25,6 +25,16 @@ exports.sponsor = function(req, res) {
   });
 };
 
+exports.announcements = function(req, res) {
+  Push.getPush(function(err, push) {
+    if (err) {
+      res.json(err);
+    }
+    res.json(push);
+    console.log(push);
+  });
+};
+
 exports.android = function(req, res) {
   Push.addAndroidPush(req.param('id'), function(err, and) {
     if (err) {
