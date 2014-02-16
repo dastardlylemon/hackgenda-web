@@ -89,8 +89,8 @@ function sortSponsor(sponsors) {
 
 exports.postSponsorUpdates = function(req, res) {
   if (req.user.isAdmin) {
-      var sponsor = req.body;
-    }
+    var sponsor = req.body;
+    
     console.log(sponsor);
     Sponsor.addSponsor(sponsor, function(err, company) {
       if (err) {
@@ -100,7 +100,7 @@ exports.postSponsorUpdates = function(req, res) {
         req.flash('success', { msg: 'Company added' } );
         res.redirect('admin/sponsorUpdates');
       }
-    });
+    }
   } else {
     res.flash('error', { msg: 'Permission denied.' });
     res.json('permission denied');
