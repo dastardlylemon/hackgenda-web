@@ -74,6 +74,7 @@ exports.sponsorUpdates = function(req, res) {
 
 function sortSponsor(sponsors) {
   var tiered = {};
+  console.log("sponsor");
   console.log(sponsors);
   for (var i = 0; i < sponsors.length; i++) {
     if (!tiered[sponsors[i].tier]) {
