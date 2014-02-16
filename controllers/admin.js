@@ -94,13 +94,16 @@ exports.postSponsorUpdates = function(req, res) {
       tier: req.body.tier,
       logourl: req.body.logourl,
       description: req.body.description,
-      reps: [{
-        name: req.body.reps.name,
-        description: req.body.reps.description,
-        email: req.body.reps.email,
-        twitter: req.body.reps.twitter
-      }]
     };
+    if (!req.body.repname) {
+      var reps = {
+        name: req.body.repname,
+        description: req.body.description,
+        email: req.body.repemail,
+        twitter: req.body.reptwitter
+      };
+      sponsor.reps = reps;
+    }
     Sponsor.addCompany(sponsor, function(err, company) {
       if (err) {
         req.flash('error adding company');
