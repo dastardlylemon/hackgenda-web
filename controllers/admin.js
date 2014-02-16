@@ -89,8 +89,6 @@ function sortSponsor(sponsors) {
 
 exports.postSponsorUpdates = function(req, res) {
   if (req.user.isAdmin) {
-    console.log("body");
-    console.log(req.body);
     var sponsor = {
       name: req.body.name,
       tier: req.body.tier,
@@ -107,6 +105,7 @@ exports.postSponsorUpdates = function(req, res) {
       };
       sponsor.reps = reps;
     }
+    console.log(sponsor);
     Sponsor.addSponsor(sponsor, function(err, company) {
       if (err) {
         req.flash('error adding company');

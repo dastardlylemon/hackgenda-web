@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 
 var repSchema = new mongoose.Schema({
-  name: { type: String, unique: true },
+  name: { type: String },
   description: { type: String },
   email: { type: String },
   twitter: { type: String }
 });
 
 var companySchema = new mongoose.Schema({
-  name: { type: String, unique: true },
+  name: { type: String },
   description: { type: String },
   tier: { type: Number },
   logourl: { type: String },
@@ -32,6 +32,7 @@ exports.getSponsor = function(cb) {
 
 exports.addSponsor = function(cmpy, cb) {
   Sponsor.findOne({name:cmpy}, function(err, company) {
+    console.log(company);
     if (err || !company) {
       var company = new Sponsor({
         name: cmpy.name,
