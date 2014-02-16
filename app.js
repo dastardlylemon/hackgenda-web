@@ -156,6 +156,7 @@ app.get('/admin/chatroomUpdates', adminController.chatroomUpdates);
  */
 
 app.get('/mobile/schedule', mobileController.schedule);
+app.get('/mobile/sponsor', mobileController.sponsor);
 
 /**
  * Start Express server.
