@@ -82,6 +82,7 @@ exports.sponsorUpdates = function(req, res) {
   });
 };
 
+
 function sortSponsor(sponsors) {
   var tiered = {};
   for (var i = 0; i < sponsors.length; i++) {
