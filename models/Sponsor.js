@@ -32,7 +32,7 @@ exports.getSponsor = function(cb) {
 
 exports.addSponsor = function(cmpy, cb) {
   Sponsor.findOne({name:cmpy}, function(err, company) {
-    if (err || !company.name) {
+    if (err || !company) {
       var company = new Sponsor({
         name: cmpy.name,
         tier: cmpy.tier,
