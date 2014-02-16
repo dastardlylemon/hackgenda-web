@@ -21,7 +21,7 @@ block content
         chat.setUser("#{id}", "#{user.profile.name}");
         chatRef.auth("#{token}");    
         var chat = new Firechat(chatRef);
-        chat.getRoomList(function(r) { 
+        chat.getRoomList(function(r) {
           $.each(r, function(i, v) {});
         });
-        if (#{user.isAdmin} || #{user.isSponsor}) {}
+        if ("#{user.isAdmin}" || "#{user.isSponsor}") {}
