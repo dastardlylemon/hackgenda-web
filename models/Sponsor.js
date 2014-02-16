@@ -40,7 +40,12 @@ exports.addSponsor = function(cmpy, cb) {
         description: cmpy.description,
         logourl: cmpy.logourl,
         url: cmpy.url,
-        reps: cmpy.reps
+        reps: [{
+          name: cmpy.repname,
+          description: cmpy.repdescription,
+          email: cmpy.repemail,
+          twitter: cmpy.reptwitter
+        }]
       });
       company.save(function(err, spsr) {
         if (err) {
@@ -60,7 +65,12 @@ exports.addSponsor = function(cmpy, cb) {
         company.reps = [];
       }
 
-      company.reps.push(cmpy.reps);
+      company.reps.push({
+          name: cmpy.repname,
+          description: cmpy.repdescription,
+          email: cmpy.repemail,
+          twitter: cmpy.reptwitter
+        });
     
       company.save(function(err, spsr) {
         if (err) {
