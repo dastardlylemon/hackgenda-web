@@ -1,4 +1,5 @@
 var Schedule = require('../models/Schedule');
+var Sponsor = require('../models/Sponsor');
 var FirebaseTokenGenerator = require("firebase-token-generator");
 
 exports.getChat = function(req, res) {
