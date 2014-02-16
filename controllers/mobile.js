@@ -3,7 +3,7 @@ var Sponsor = require('../models/Sponsor');
 var Push = require('../models/Push');
 var user = require('./user');
 var gcm = require('node-gcm');
-var twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_SID);
+//var twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_SID);
 
 exports.schedule = function(req, res) {
   Schedule.getSchedule(function(err, sched) {
@@ -60,7 +60,7 @@ exports.pushAndroidMessage = function(message, cb) {
   });
 }
 
-
+/*
 exports.pushTwilio = function(message, cb) {
   user.getNumbers(function(err, nums) {
     for (var i = 0; i < nums.length; i++) {
@@ -75,3 +75,4 @@ exports.pushTwilio = function(message, cb) {
     }
   });
 };
+*/
