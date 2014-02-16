@@ -54,8 +54,14 @@ exports.addSponsor = function(cmpy, cb) {
       if (!company.reps) {
         company.reps = [];
       }
-      var reps = cmpy.
-      company.reps.push(cmpy.reps);]
+      var reps = new repSchema({
+        name: cmpy.repname,
+        description: cmpy.repdescription,
+        email: cmpy.repemail,
+        twitter: cmpy.reptwitter
+      });
+
+      company.reps.push(reps);
     
       company.save(function(err, spsr) {
         if (err) {
