@@ -8,4 +8,12 @@ block content
     br
     | 48 hours. 1,200 hackers. $30,000 in prizes.
 
+  div(class='row')
+      div(class='col-sm-4 col-sm-offset-8')
+        each announcement in announcements
+          div(class='main-announcement')
+            h1 #{announcement.name}
+            h2 #{announcement.description}
+            h6 By #{announcement.author} | #{announcement.time}
+
   link(rel='stylesheet', href='/css/home-custom.css')
