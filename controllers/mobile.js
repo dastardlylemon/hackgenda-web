@@ -11,7 +11,7 @@ exports.schedule = function(req, res) {
       res.json(err);
     }
     res.json(sched);
-    console.log(sched);
+    //console.log(sched);
   });
 };
 
@@ -21,7 +21,7 @@ exports.sponsor = function(req, res) {
       res.json(err);
     }
     res.json(spsr);
-    console.log(spsr);
+    //console.log(spsr);
   });
 };
 
@@ -31,7 +31,7 @@ exports.announcements = function(req, res) {
       res.json(err);
     }
     res.json(push);
-    console.log(push);
+    //console.log(push);
   });
 };
 
@@ -41,7 +41,7 @@ exports.android = function(req, res) {
       res.json(err);
     }
     res.json(and);
-    console.log("android" + and);
+    //console.log("android" + and);
   });
 }
 
@@ -51,7 +51,7 @@ exports.pushAndroidMessage = function(message, cb) {
   //API Server Key
   var sender = new gcm.Sender(process.env.GCM_KEY);
   Push.getAndroidPush(function(err, registrationIds){
-    console.log(message);
+    //console.log(message);
     // Value the payload data to send...
     message.addData('message',message);
     message.addData('title', 'Hackgenda');
@@ -65,7 +65,7 @@ exports.pushAndroidMessage = function(message, cb) {
      * Parameters: message-literal, registrationIds-array, No. of retries, callback-function
      */
     sender.send(message, registrationIds, 4, function (result) {
-      console.log(result);
+      //console.log(result);
       //cb(result);
     });
   });

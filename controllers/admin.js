@@ -47,7 +47,7 @@ exports.scheduleUpdates = function(req, res) {
         title: 'Update Schedule',
         schedule: sched
       });
-      console.log(sched);
+      //console.log(sched);
     } else {
       res.redirect('schedule');
     }
@@ -90,7 +90,7 @@ exports.sponsorUpdates = function(req, res) {
         title: 'Update Sponsor',
         sponsor: spsr
       });
-      console.log(spsr);
+      //console.log(spsr);
     } else {
       res.redirect('sponsor');
     }
@@ -103,7 +103,7 @@ exports.postSponsorUpdates = function(req, res) {
   if (req.user && req.user.isAdmin) {
     var sponsor = req.body;
     
-    console.log(sponsor);
+    //console.log(sponsor);
     Sponsor.addSponsor(sponsor, function(err, company) {
       if (err) {
         req.flash('error adding company');
