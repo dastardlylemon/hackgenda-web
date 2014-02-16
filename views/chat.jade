@@ -13,6 +13,6 @@ block content
   script(type='text/javascript').
     var chatRef = new Firebase('https://hackgenda.firebaseio.com/chat');
     var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
-    chat.setUser(#{id}, "'" + #{user.profile.name} + "'");
+    chat.setUser(#{id}, "#{user.profile.name}");
     chatRef.auth(#{token});
 
