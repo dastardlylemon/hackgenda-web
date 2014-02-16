@@ -11,11 +11,10 @@ block content
   div(class='row')
       div(class='col-sm-4 col-sm-offset-8')
         h2 Recent Updates
-        for (var i = 0; i < 5; ++i) {
+        for (var i = 0; i < 5; ++i)
           div(class='main-announcement')
             h3 #{announcements[i].name}
             h4 #{announcements[i].description}
             h6 By #{announcements[i[.author} | #{announcements[i].time}
-        }
 
   link(rel='stylesheet', href='/css/home-custom.css')
