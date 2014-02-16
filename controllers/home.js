@@ -11,7 +11,7 @@ exports.index = function(req, res) {
     }
     push = push.reverse();
     var newpush = [];
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 3; i++) {
       newpush.push(push[i]);
     }
     res.render('home', {
