@@ -8,7 +8,7 @@ var repSchema = new mongoose.Schema({
 });
 
 var companySchema = new mongoose.Schema({
-  name: { type: String, unique: true },
+  name: { type: String },
   description: { type: String },
   tier: { type: Number },
   logourl: { type: String },
