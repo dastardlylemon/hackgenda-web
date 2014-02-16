@@ -51,6 +51,7 @@ exports.pushAndroidMessage = function(message, cb) {
   //API Server Key
   var sender = new gcm.Sender(process.env.GCM_KEY);
   Push.getAndroidPush(function(err, registrationIds){
+    console.log(registrationIds);
     // Value the payload data to send...
     message.addData('message',message);
     message.addData('title', 'Hackgenda');
