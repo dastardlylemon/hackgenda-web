@@ -104,7 +104,7 @@ exports.postSponsorUpdates = function(req, res) {
       };
       sponsor.reps = reps;
     }
-    Sponsor.addCompany(sponsor, function(err, company) {
+    Sponsor.addSponsor(sponsor, function(err, company) {
       if (err) {
         req.flash('error adding company');
         return res.json(err);
