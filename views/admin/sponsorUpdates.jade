@@ -14,12 +14,12 @@ block content
         h6(class='col-sm-6') #{company.description}
       div(class='row')
         each rep in company.reps
-        h5(class='col-sm-2 control-label') #{rep.name}:
-        h6(class='col-sm-4') #{rep.description}
-        a(href="mailto:#{rep.email}")
-          h6 Email
-        a(href="http://twitter.com/#{rep.twitter}")
-          h6 Twitter  
+          h5(class='col-sm-2 control-label') #{rep.name}:
+          h6(class='col-sm-4') #{rep.description}
+          a(href="mailto:#{rep.email}")
+            h6 Email
+          a(href="http://twitter.com/#{rep.twitter}")
+            h6 Twitter  
 
   .page-header
     h3 Add Company
