@@ -10,10 +10,11 @@ block content
 
   div(class='row')
       div(class='col-sm-4 col-sm-offset-8')
+        h2 Recent Updates
         each announcement in announcements
           div(class='main-announcement')
-            h1 #{announcement.name}
-            h2 #{announcement.description}
+            h2 #{announcement.name}
+            h3 #{announcement.description}
             h6 By #{announcement.author} | #{announcement.time}
 
   link(rel='stylesheet', href='/css/home-custom.css')
